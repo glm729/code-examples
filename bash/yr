@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# This script essentially cleans v.redd.it links before passing to youtube-dl.
+# The only real functions of this are to convert the link to HTTPS if not
+# already, to remove the HLSPlaylist suffix from the link (i.e. grab the video
+# itself, not its playlist metadata), and to download the named video in a more
+# convenient fashion compared to typing the whole line every time.
+
 cd ~/Videos/
 function pm () {
     local TYPE=$1

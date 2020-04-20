@@ -1,5 +1,14 @@
 #!/bin/bash
-# echo -e "\e[1;36mDEBUG MODE: WILL NOT PASS TO YOUTUBE-DL\e[0;33m" ; DEBUG=1
+
+# This script essentially cleans up the input to youtube-dl. If entering a video
+# link with time or playlist information, it is removed. If entering a playlist
+# link, a second argument can be passed (parsed?) to provide the start index to
+# download from. If a youtu.be link, it is converted to "proper" youtube.com. If
+# not HTTPS, it's converted to HTTPS. Information is given along the way, but
+# bash seems a lot faster to the kind of thing I've been used to, so it all
+# appears rather quickly!
+
+# echo -e "\e[1;36mCHECK MODE: WILL NOT PASS TO YOUTUBE-DL\e[0;33m" ; CHECK=1
 cd ~/Videos/watchlist
 function pm () {
     local TYPE=$1
@@ -22,7 +31,7 @@ if [[ ! $1 =~ www\.youtube\.com/ && ! $1 =~ youtu\.be/ ]] ; then
 fi
 LINK="$1"
 if [[ $LINK =~ ^http: ]] ; then
-    pm warn "Link not secure -- converting to https"
+    pm warn "Link not https -- converting"
     LINK="${1:0:4}s${1:4}"
 fi
 if [[ $LINK =~ ^https\://youtu\.be/ ]] ; then
@@ -56,7 +65,7 @@ else
     FRM="%(uploader)s/%(title)s.%(ext)s"
     CMD="youtube-dl -v --output $FRM $LINK"
 fi
-if [[ ! -z $DEBUG ]] ; then
+if [[ ! -z $CHECK ]] ; then
     echo -e "\e[1;36mLINK:  "$LINK"\e[0m"
     echo -e "\e[1;36mCMD:   "$CMD"\e[0m"
 else
