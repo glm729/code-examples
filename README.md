@@ -4,9 +4,9 @@ README as at 2020-04-20.
 
 Any constructive comments on how to improve my skills, knowledge, or best
 practice are most welcome, provided that reasoning is given. For example,
-instead of saying ``Do it this way'', I recommend providing a bit of reasoning
-and logic to accompany it, e.g. ``Do it this way, because it's faster and uses
-less RAM''.
+instead of saying "Do it this way", I recommend providing a bit of reasoning and
+logic to accompany it, e.g. "Do it this way, because it's faster and uses less
+RAM".
 
 ## Background
 
