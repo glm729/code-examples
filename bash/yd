@@ -1,0 +1,64 @@
+#!/bin/bash
+# echo -e "\e[1;36mDEBUG MODE: WILL NOT PASS TO YOUTUBE-DL\e[0;33m" ; DEBUG=1
+cd ~/Videos/watchlist
+function pm () {
+    local TYPE=$1
+    local MESG=$2
+    if [[ $TYPE = "warn" ]] ; then
+        echo -e "\e[0m  [\e[0;33mWARN\e[0m] $MESG"
+    elif [[ $TYPE = "info" ]] ; then
+        echo -e "\e[0m  [\e[0;34mINFO\e[0m] $MESG"
+    elif [[ $TYPE = "ok" ]] ; then
+        echo -e "\e[0m  [\e[0;32m OK \e[0m] $MESG"
+    elif [[ $TYPE = "exit" ]] ; then
+        echo -e "\e[0m  [\e[0;31mEXIT\e[0m] $MESG"
+    else
+        echo "\e[0m         $MESG"
+    fi
+}
+if [[ ! $1 =~ www\.youtube\.com/ && ! $1 =~ youtu\.be/ ]] ; then
+    pm exit "Link does not appear to be youtube.com or youtu.be, quitting."
+    exit 1
+fi
+LINK="$1"
+if [[ $LINK =~ ^http: ]] ; then
+    pm warn "Link not secure -- converting to https"
+    LINK="${1:0:4}s${1:4}"
+fi
+if [[ $LINK =~ ^https\://youtu\.be/ ]] ; then
+    pm info "Link is youtu.be, converting to standard format"
+    if [[ $LINK =~ \?(lis)?t\= ]] ; then
+        pm info "Stripping list or time information from link"
+        PART=$(echo "$1" | grep -P "(?<=be\/)(.*)(?=\?(lis)?t=)" -o)
+    else
+        PART=$(echo "$1" | grep -P "(?<=be\/)(.*)" -o)
+    fi
+    LINK="https://www.youtube.com/watch?v=$PART"
+fi
+if [[ $LINK =~ playlist ]] ; then
+    pm info "Link is a playlist"
+    if [[ -z $2 ]] ; then
+        pm info "No start index provided, assigning 1"
+        START=1
+    else
+        pm info "Start index provided as $2"
+        START=$2
+    fi
+    pm ok "Downloading playlist from index $START to end"
+    FRM="%(uploader)s/%(playlist)s/%(playlist_index)s__%(title)s.%(ext)s"
+    CMD="youtube-dl -v --playlist-start $START --output $FRM $LINK"
+else
+    if [[ $LINK =~ \&list\= ]] ; then
+        pm info "Stripping list or time information from link"
+        LINK=$(echo "$LINK" | grep -P "(.*)(?=\&list\=)" -o)
+    fi
+    pm ok "Link is a video -- passing to youtube-dl"
+    FRM="%(uploader)s/%(title)s.%(ext)s"
+    CMD="youtube-dl -v --output $FRM $LINK"
+fi
+if [[ ! -z $DEBUG ]] ; then
+    echo -e "\e[1;36mLINK:  "$LINK"\e[0m"
+    echo -e "\e[1;36mCMD:   "$CMD"\e[0m"
+else
+    $CMD
+fi

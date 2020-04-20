@@ -1,0 +1,44 @@
+#!/bin/bash
+cd ~/Videos/
+function pm () {
+    local TYPE=$1
+    local MESG=$2
+    if [[ $TYPE = "warn" ]] ; then
+        echo -e "\e[0m  [\e[0;33mWARN\e[0m] $MESG"
+    elif [[ $TYPE = "info" ]] ; then
+        echo -e "\e[0m  [\e[0;34mINFO\e[0m] $MESG"
+    elif [[ $TYPE = "ok" ]] ; then
+        echo -e "\e[0m  [\e[0;32m OK \e[0m] $MESG"
+    elif [[ $TYPE = "exit" ]] ; then
+        echo -e "\e[0m  [\e[0;31mEXIT\e[0m] $MESG"
+    else
+        echo "\e[0m         $MESG"
+    fi
+}
+if [[ ! $1 =~ ^https?:// && ! -z $2 ]] ; then
+    NAME="$1"
+    LINK="$2"
+else
+    LINK="$1"
+fi
+if [[ ! $LINK =~ /v.redd.it/ ]] ; then
+    pm exit "Link does not appear to be v.redd.it, quitting."
+    exit 1
+fi
+if [[ $LINK =~ ^http:/ ]] ; then
+    pm warn "Link not https -- converting"
+    LINK="https://"$(echo $LINK | grep -P "[^http://](.*)" -o)
+fi
+if [[ $LINK =~ /HLSPlaylist\. ]] ; then
+    pm info "Stripping HLSPlaylist component"
+    LINK=$(echo $LINK | grep -P "(.*)[^/HLSPlaylist.m3u8/?]" -o)
+fi
+if [[ -z $NAME ]] ; then
+    pm warn "Name not provided -- using default title"
+    NAME="%(title)s"
+else
+    pm info "Name given as \"$NAME\""
+fi
+pm ok "Link is a Reddit video -- passing to youtube-dl"
+CMD="youtube-dl --output $NAME.%(ext)s $LINK"
+$CMD
