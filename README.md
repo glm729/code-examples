@@ -40,10 +40,10 @@ Python at the University of Southern Queensland, via online study, in the second
 semester of 2019. Automated testing of the Rare Disease Registry Framework
 primarily uses the Python packages Aloe and Selenium. I have written scripts for
 automation of the Patient Reported Outcomes (PROMS) surveys, which were modified
-to accept input data via CSV as requested by Lee Render, using the Selenium
-package. I have recently been writing new features and steps for extending
-current testing routines, including introducing tests for an additional registry
-which was not previously covered.
+to accept input data via CSV as requested by Lee Render (see @id2359), using the
+Selenium package. I have recently been writing new features and steps for
+extending current testing routines, including introducing tests for an
+additional registry which was not previously covered.
 
 ### Other languages
 

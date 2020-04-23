@@ -32,15 +32,15 @@ fi
 LINK="$1"
 if [[ $LINK =~ ^http: ]] ; then
     pm warn "Link not https -- converting"
-    LINK="${1:0:4}s${1:4}"
+    LINK="https://"$(echo $LINK | grep -P "[^http://](.*)" -o)
 fi
 if [[ $LINK =~ ^https\://youtu\.be/ ]] ; then
     pm info "Link is youtu.be, converting to standard format"
     if [[ $LINK =~ \?(lis)?t\= ]] ; then
         pm info "Stripping list or time information from link"
-        PART=$(echo "$1" | grep -P "(?<=be\/)(.*)(?=\?(lis)?t=)" -o)
+        PART=$(echo $LINK | grep -P "(?<=be\/)(.*)(?=\?(lis)?t=)" -o)
     else
-        PART=$(echo "$1" | grep -P "(?<=be\/)(.*)" -o)
+        PART=$(echo $LINK | grep -P "(?<=be\/)(.*)" -o)
     fi
     LINK="https://www.youtube.com/watch?v=$PART"
 fi
@@ -59,15 +59,15 @@ if [[ $LINK =~ playlist ]] ; then
 else
     if [[ $LINK =~ \&list\= ]] ; then
         pm info "Stripping list or time information from link"
-        LINK=$(echo "$LINK" | grep -P "(.*)(?=\&list\=)" -o)
+        LINK=$(echo $LINK | grep -P "(.*)(?=\&list\=)" -o)
     fi
     pm ok "Link is a video -- passing to youtube-dl"
     FRM="%(uploader)s/%(title)s.%(ext)s"
     CMD="youtube-dl -v --output $FRM $LINK"
 fi
 if [[ ! -z $CHECK ]] ; then
-    echo -e "\e[1;36mLINK:  "$LINK"\e[0m"
-    echo -e "\e[1;36mCMD:   "$CMD"\e[0m"
+    echo -e "\e[1;36mLINK:  $LINK\e[0m"
+    echo -e "\e[1;36mCMD:   $CMD\e[0m"
 else
     $CMD
 fi
