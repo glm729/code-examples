@@ -1,0 +1,74 @@
+#!/usr/bin/python3
+# -*- mode: python; encoding: utf-8 -*-
+
+# ------------------------------------------------------------------------------
+# This script is a helper for work at the Centre for Comparative Genomics. The
+# task for one particular day was to collect as much information as I could find
+# about past testing. This was not well documented (my fault), so I wrote the
+# prototype for this while I was thinking how to best approach finding more
+# info. It started with creating one file and appending the results, but then
+# evolved into separate files held in a common directory, with an appropriate
+# naming convention. This is so that the files could be combined in the correct
+# chronological order, as the details of past testing are not found in order.
+# ------------------------------------------------------------------------------
+# Imports textwrap and re
+# Appends to the file in case multiple tests are performed for one date
+# Not tested in the case whereby the directory ./testnotes/ does not exist
+# ------------------------------------------------------------------------------
+
+import textwrap as tw
+import re
+
+data = {}
+
+prompt_text = {
+    "registry": "Registry:",
+    "registry_version": "Registry version:",
+    "rdrf_version": "RDRF version:",
+    "date": "Date (YYYY-MM-DD):",
+    "notes": "Description:"
+}
+
+for item in prompt_text:
+    while len(prompt_text[item]) < 20:
+        prompt_text[item] += " "
+    if item == "notes":
+        prompt_text[item] += "\n"
+    pass
+
+for item in prompt_text:
+    data[item] = input(prompt_text[item])
+    if item == "notes":
+        data[item] = tw.fill(data[item], width=80)
+    if item == "date":
+        l = lambda x : len(data[item].split("-")[x])
+        if not (l(0) == 4 and l(1) == 2 and l(2) == 2):
+            raise Exception(
+                "Date does not appear to have been entered correctly."
+            )
+    pass
+
+notes_new = (
+    "\n%s, %s\n"
+    "----------------------------------------"
+    "----------------------------------------\n"
+    % (
+        data["registry"],
+        data["date"]
+    )
+)
+
+for item in ["registry_version", "rdrf_version", "notes"]:
+    notes_new += "%s%s\n" % (prompt_text[item], data[item])
+    pass
+
+filename = (
+    "./testnotes/" +
+    "".join(data["date"].split("-")) +
+    re.sub(r"\W", "", data["registry"].lower())
+)
+
+with open(filename, "a") as f:
+    f.write(notes_new)
+    print("Wrote to file \"%s\"" % filename)
+    pass

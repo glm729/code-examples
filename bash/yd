@@ -30,18 +30,19 @@ if [[ ! $1 =~ www\.youtube\.com/ && ! $1 =~ youtu\.be/ ]] ; then
     exit 1
 fi
 LINK="$1"
+if [[ $LINK =~ "&" ]] ; then
+    pm warn "Stripping extra information from link"
+    while [[ $LINK =~ "&" ]] ; do
+        LINK=$(echo $LINK | grep -P "(.*)(?=\&)" -o)
+    done
+fi
 if [[ $LINK =~ ^http: ]] ; then
     pm warn "Link not https -- converting"
     LINK="https://"$(echo $LINK | grep -P "[^http://](.*)" -o)
 fi
 if [[ $LINK =~ ^https\://youtu\.be/ ]] ; then
     pm info "Link is youtu.be, converting to standard format"
-    if [[ $LINK =~ \?(lis)?t\= ]] ; then
-        pm info "Stripping list or time information from link"
-        PART=$(echo $LINK | grep -P "(?<=be\/)(.*)(?=\?(lis)?t=)" -o)
-    else
-        PART=$(echo $LINK | grep -P "(?<=be\/)(.*)" -o)
-    fi
+    PART=$(echo $LINK | grep -P "(?<=be\/)(.*)" -o)
     LINK="https://www.youtube.com/watch?v=$PART"
 fi
 if [[ $LINK =~ playlist ]] ; then
@@ -55,15 +56,11 @@ if [[ $LINK =~ playlist ]] ; then
     fi
     pm ok "Downloading playlist from index $START to end"
     FRM="%(uploader)s/%(playlist)s/%(playlist_index)s__%(title)s.%(ext)s"
-    CMD="youtube-dl -v --playlist-start $START --output $FRM $LINK"
+    CMD="youtube-dl --no-cache-dir --playlist-start $START --output $FRM $LINK"
 else
-    if [[ $LINK =~ \&list\= ]] ; then
-        pm info "Stripping list or time information from link"
-        LINK=$(echo $LINK | grep -P "(.*)(?=\&list\=)" -o)
-    fi
     pm ok "Link is a video -- passing to youtube-dl"
     FRM="%(uploader)s/%(title)s.%(ext)s"
-    CMD="youtube-dl -v --output $FRM $LINK"
+    CMD="youtube-dl --no-cache-dir --output $FRM $LINK"
 fi
 if [[ ! -z $CHECK ]] ; then
     echo -e "\e[1;36mLINK:  $LINK\e[0m"
