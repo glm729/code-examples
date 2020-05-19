@@ -11,13 +11,16 @@
 # naming convention. This is so that the files could be combined in the correct
 # chronological order, as the details of past testing are not found in order.
 # ------------------------------------------------------------------------------
-# Imports textwrap and re
-# Appends to the file in case multiple tests are performed for one date
-# Not tested in the case whereby the directory ./testnotes/ does not exist
+# - Imports textwrap, re, and os.path
+# - os.path is to check if the file exists, which, if it does, suggests multiple
+#   tests were performed on one day
+# - Appends to the file in case multiple tests are performed for one date
+# - Not tested in the case whereby the testnotes directory does not exist
 # ------------------------------------------------------------------------------
 
 import textwrap as tw
 import re
+import os.path as op
 
 data = {}
 
@@ -63,12 +66,17 @@ for item in ["registry_version", "rdrf_version", "notes"]:
     pass
 
 filename = (
-    "./testnotes/" +
+    "./testnotes" +  # Full path masked, replace as necessary
     "".join(data["date"].split("-")) +
     re.sub(r"\W", "", data["registry"].lower())
 )
 
-with open(filename, "a") as f:
+if op.isfile(filename):
+    write = "a"
+else:
+    write = "w"
+
+with open(filename, write) as f:
     f.write(notes_new)
     print("Wrote to file \"%s\"" % filename)
     pass
