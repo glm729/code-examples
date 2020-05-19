@@ -26,9 +26,9 @@ data = {}
 
 prompt_text = {
     "registry": "Registry:",
+    "date": "Date (YYYY-MM-DD):",
     "registry_version": "Registry version:",
     "rdrf_version": "RDRF version:",
-    "date": "Date (YYYY-MM-DD):",
     "notes": "Description:"
 }
 
@@ -36,7 +36,7 @@ for item in prompt_text:
     while len(prompt_text[item]) < 20:
         prompt_text[item] += " "
     if item == "notes":
-        prompt_text[item] += "\n"
+        prompt_text[item] += "\n\n"
     pass
 
 for item in prompt_text:
@@ -44,8 +44,8 @@ for item in prompt_text:
     if item == "notes":
         data[item] = tw.fill(data[item], width=80)
     if item == "date":
-        l = lambda x : len(data[item].split("-")[x])
-        if not (l(0) == 4 and l(1) == 2 and l(2) == 2):
+        l = lambda x, y : len(data[item].split("-")[x]) == y
+        if not (l(0, 4) and l(1, 2) and l(2, 2)):
             raise Exception(
                 "Date does not appear to have been entered correctly."
             )
@@ -66,7 +66,7 @@ for item in ["registry_version", "rdrf_version", "notes"]:
     pass
 
 filename = (
-    "./testnotes" +  # Full path masked, replace as necessary
+    "./testnotes/" +  # Full path masked, edit as necessary.
     "".join(data["date"].split("-")) +
     re.sub(r"\W", "", data["registry"].lower())
 )
@@ -78,5 +78,5 @@ else:
 
 with open(filename, write) as f:
     f.write(notes_new)
-    print("Wrote to file \"%s\"" % filename)
+    print("\nWrote to file \"%s\"" % filename)
     pass
