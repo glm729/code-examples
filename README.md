@@ -1,12 +1,12 @@
 # Code Examples
 
-README as at 2020-04-20.
+README as at 2020-05-26.
 
 Any constructive comments on how to improve my skills, knowledge, or best
 practice are most welcome, provided that reasoning is given. For example,
 instead of saying "Do it this way", I recommend providing a bit of reasoning and
-logic to accompany it, e.g. "Do it this way, because it's faster and uses less
-RAM".
+logic to accompany it, e.g. "Do it this way, because it's faster / uses less RAM
+/ is the common convention".
 
 ## Background
 
@@ -14,7 +14,9 @@ I typically work with R for statistics, and Python for testing at work. I have
 otherwise been playing around with R for things like recording timesheets,
 Python for things like implementations of the Syracuse and Euler algorithms, and
 have recently been using bash for cleaning input (and providing a bit of fancy
-output) for the youtube-dl program (just as a thought exercise, I guess).
+output) for the youtube-dl program (just as a thought exercise, I guess). I've
+recently started to play around with Ruby a little bit, but will need to knock
+off my undergrad before I get in deep.
 
 ### R
 
@@ -43,14 +45,15 @@ automation of the Patient Reported Outcomes (PROMS) surveys, which were modified
 to accept input data via CSV as requested by Lee Render (see @id2359), using the
 Selenium package. I have recently been writing new features and steps for
 extending current testing routines, including introducing tests for an
-additional registry which was not previously covered.
+additional registry which was not previously covered, using the Aloe framework.
+One example is provided here, currently.
 
 ### Other languages
 
 I am definitely open to learning more programming languages, though I have not
 tried lower-level languages. I have tended to stick to high-level languages. As
-such, while I am still curious to learn, it will likely take me longer to get
-the hang of, say, C or Fortran.
+such, while I am still curious to learn, it will likely take me quite a bit
+longer to get the hang of, say, C or Fortran.
 
 ### Editor
 
@@ -63,6 +66,7 @@ things I'm currently doing, with the exception of R, for which I use RStudio
 ### Computational literacy
 
 I am not a computer scientist or software engineer. I have essentially learned a
-bit of programming on the fly while studying statistics and while working at the
-CCG. It has definitely opened up more of an interest in the field, which I am
-happy to pursue, but I wouldn't call myself a full-on software engineer.
+bit of programming on the fly while studying statistics, while working at the
+CCG, and out of interest. It has definitely opened up more of an interest in the
+field, which I am happy to pursue, but I wouldn't call myself a full-on software
+engineer.
