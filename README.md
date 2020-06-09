@@ -50,7 +50,8 @@ Render (see @id2359), using the Selenium package. I have recently been writing
 new features and steps for extending current testing routines, including
 introducing tests for an additional registry which was not previously covered,
 using the Aloe framework. One example is provided here, currently. A number of
-additional steps (and associated feature files) have been produced.
+additional steps (and associated feature files) have been produced since this
+first published example.
 
 ### Other languages
 
