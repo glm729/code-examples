@@ -1,6 +1,6 @@
 # Code Examples
 
-README as at 2020-10-02.
+README as at 2020-10-04.
 
 Any constructive comments on how to improve my skills, knowledge, or best
 practice are most welcome, provided that reasoning is given. For example,
@@ -48,9 +48,9 @@ robust parameter estimation technique in estimating hormone levels in equine
 blood plasma samples to diagnose a common degenerative disorder. My work on this
 project resulted in co-authorship on the paper (*Clinically and temporally
 specific diagnostic thresholds for plasma ACTH in the horse*, Equine Veterinary
-Journal; doi?). The final project aimed to apply text mining techniques to a
-national veterinary database to monitor vaccination scheduling for working dogs
-in Australia.
+Journal; [doi:10.1111/evj.13292](https://doi.org/10.1111/evj.13292)). The final
+project aimed to apply text mining techniques to a national veterinary database
+to monitor vaccination scheduling for working dogs in Australia.
 
 #### Python
 
@@ -83,7 +83,14 @@ I have changed editors a few times. I have worked with MATLAB, Octave, and
 Jupyter Notebook when studying Mathematical Modelling. Otherwise, I have used
 RStudio, Visual Studio Code, Atom, and Emacs. For a while, particularly earlier
 this year, I used Emacs for most things I was doing. I now prefer to use Vim,
-though I'm far from knowledgeable about how to properly use it.
+though I'm far from knowledgeable about how to properly use it. I will also be
+learning how to use Windows shortly, in which I will be using the Atom editor.
+
+So, in short, when using Linux systems I use Vim, and when on Windows I use
+Atom. For cross-platform or company-wide usage and code demonstration, it has
+been recommended to set up the code and documentation together in Jupyter
+Notebooks, which, given my experience with the system, I think is a very good
+idea.
 
 ### Programming literacy
 
