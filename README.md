@@ -58,7 +58,7 @@ I began using Python in mid-2019, shortly into my employment as Research
 Assistant at the Centre for Comparative Genomics. I completed CSC2410
 Computational Thinking with Python at the University of Southern Queensland, via
 online study, in the second semester of 2019, which was mostly based upon
-Downey's *Modelling and Simulation with Python*. Automated testing of the Rare
+Downey's *Modeling and Simulation in Python*. Automated testing of the Rare
 Disease Registry Framework primarily uses the Python packages Aloe and Selenium.
 I have written scripts for automation of the Patient Reported Outcomes (PROMS)
 surveys, which were modified to accept input data via CSV as requested by Lee
