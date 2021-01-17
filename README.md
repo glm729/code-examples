@@ -1,12 +1,12 @@
 # Code Examples
 
-README as at 2020-11-22.
+README as at 2021-01-17.
 
 Any constructive comments on how to improve my skills, knowledge, or best
 practice are most welcome, provided that reasoning is given.  For example,
-instead of saying "Do it this way", I recommend providing a bit of reasoning and
-logic to accompany it, e.g. "Do it this way, because it's faster / uses less RAM
-/ is the common convention".
+instead of saying "Do it this way", I recommend providing a bit of reasoning
+and logic to accompany it, e.g. "Do it this way, because it's faster / uses
+less RAM / is the common convention".
 
 ## Personal background
 
@@ -15,6 +15,13 @@ at Murdoch University, Perth, Western Australia, during which I completed three
 projects in veterinary biostatistics.  I am currently an Assistant Data Analyst
 at the Australian National Phenome Centre (ANPC), and my previous position was
 Software Tester at the Centre for Comparative Genomics (CCG).
+
+Also, just to mention, I run a Raspberry Pi 4 with Ubuntu MATE.  This is not
+the computer I use at work, but is more than suitable for the vast majority of
+things I do (even at work, possibly, but don't hold me to that), except maybe
+it's not so great with 720p+ on Youtube.  All in all, I adore the Raspberry Pi
+4, and I only use it as a desktop computer, so I can only imagine the
+possibilities for extension.
 
 ## Coding background
 
@@ -28,13 +35,18 @@ for cleaning input (and providing a bit of fancy output) for the youtube-dl
 program (just as a thought exercise, I guess).  I've recently been playing
 around with Ruby a little bit, as well as using it a bit at work, and have
 uploaded some scripts for a couple of things, including Syracuse and Euclid
-implementations.
+implementations.  Recently, I'm learning JavaScript at work for data handling
+and manipulation, and I find its syntax can parallel surprisingly with Ruby,
+which has helped me to pick up basic JS fairly quickly.
 
 In essence, I learned the basics of R when studying statstics, Python when
-studying mathematical modelling and working at the CCG, and Ruby when working at
-the CCG and the ANPC as well as out of personal interest.  Recent changes at
-work suggest that I will now be learning a bit of HTML, CSS, and JavaScript,
-mainly for interface design and for data handling.
+studying mathematical modelling and when working at the CCG, and Ruby when
+working at the CCG and the ANPC as well as out of personal interest.  Recent
+changes at work resulted in me learning a bit of HTML, CSS, and JavaScript,
+mainly for data handling but also to assist in building small test pages for
+certain functions or operations.  I can also provide code assistance and
+documentation, which I enjoy because I miss teaching mathematics and
+statistics.
 
 #### R
 
@@ -45,64 +57,75 @@ including for summer scholarship projects for Murdoch University and for the
 Australian Mathematical Sciences Institute.  Both projects were in veterinary
 biostatistics, as was an undergraduate project in my final semester.  The first
 project was an investigation into factors affecting survival of dogs in
-veterinary trauma cases presenting to emergency and critical care, mainly in the
-US.  The second project was a supplementary analysis for the application of a
-robust parameter estimation technique in estimating hormone levels in equine
+veterinary trauma cases presenting to emergency and critical care, mainly in
+the US.  The second project was a supplementary analysis for the application of
+a robust parameter estimation technique in estimating hormone levels in equine
 blood plasma samples to diagnose a common degenerative disorder.  My work on
 this project resulted in co-authorship on the paper (*Clinically and temporally
 specific diagnostic thresholds for plasma ACTH in the horse*, Equine Veterinary
-Journal; [doi:10.1111/evj.13292](https://doi.org/10.1111/evj.13292)).  The final
-project aimed to apply text mining techniques to a national veterinary database
-to monitor vaccination scheduling for working dogs in Australia.
+Journal; [doi:10.1111/evj.13292](https://doi.org/10.1111/evj.13292)) for
+extending the visualisations produced for my presentation at the Australian
+Mathematical Sciences Institute in early 2020.  The final project aimed to
+apply text mining techniques to a national veterinary database to monitor
+vaccination scheduling for working dogs in Australia.  I didn't get very far,
+and I would like to improve upon it if I can find the time.
 
 #### Python
 
 I began using Python in mid-2019, shortly into my employment as Research
 Assistant at the Centre for Comparative Genomics.  I completed CSC2410
-Computational Thinking with Python at the University of Southern Queensland, via
-online study, in the second semester of 2019, which was mostly based upon
+Computational Thinking with Python at the University of Southern Queensland,
+via online study, in the second semester of 2019, which was mostly based upon
 Downey's *Modeling and Simulation in Python*.  Automated testing of the Rare
-Disease Registry Framework primarily uses the Python packages Aloe and Selenium.
-I have written scripts for automation of the Patient Reported Outcomes (PROMS)
-surveys, which were modified to accept input data via CSV as requested by Lee
-Render (see @id2359), using the Selenium package.  I have written new features
-and steps for extending current testing routines, including introducing tests
-for an additional registry which was not previously covered, using the Aloe
-framework.  One example is provided here, currently, but is now quite out of
-date.  A number of additional steps (and associated feature files) have been
-produced since this first published example.
+Disease Registry Framework primarily uses the Python packages Aloe and
+Selenium.  I have written scripts for automation of the Patient Reported
+Outcomes (PROMS) surveys, which were modified to accept input data via CSV as
+requested by Lee Render (see [@id2359](https://github.com/id2359)), using the
+Selenium package.  I have written new features and steps for extending current
+testing routines, including introducing tests for an additional registry which
+was not previously covered, using the Aloe framework.  One example is provided
+here, currently, but is now quite out of date.  A number of additional steps
+(and associated feature files) have been produced since this first published
+example.  I also made some minor modifications to a couple of unit tests,
+introducing a small set of sub-tests for a couple of operations, but I didn't
+go too deep there.
 
 #### Other languages
 
 I am definitely open to learning more programming languages, though I have not
 tried lower-level languages.  I have tended to stick to high-level languages.
 As such, while I am still curious to learn, it will likely take me quite a bit
-longer to get the hang of, say, C or Fortran.  For high-level languages, I have
-been playing around and working with Ruby.  I am now starting to learn HTML,
-CSS, and JavaScript at work, for designing a web-style interface for data
-handling, analysis, and visualisation.
+longer to get the hang of lower-level languages, such as C or Fortran.  For
+high-level languages, I have been playing around and working with Ruby.  I am
+now starting to learn HTML, CSS, and JavaScript at work, for designing a
+web-style interface for data handling, analysis, and visualisation.
 
 ### Editor
 
 I have changed editors a few times.  I have worked with MATLAB, Octave, and
 Jupyter Notebook when studying Mathematical Modelling.  Otherwise, I have used
-RStudio, Visual Studio Code, Atom, and Emacs.  For a while, particularly earlier
-this year, I used Emacs for most things I was doing.  I now prefer to use Vim,
-though I'm far from knowledgeable about how to properly use it.  I have also
-been using the Atom editor at work, which is quite handy, but I still prefer
-Vim.  For cross-platform or company-wide usage and code demonstration, it has
-been recommended to set up the code and documentation together in Jupyter
-Notebooks, which, given my experience with the system, I think is a very good
-idea.  As such, I have recently produced a number of reports of recent work in
-Jupyter Notebooks.  I have not yet attempted more complex or integrated use.
+RStudio, Visual Studio Code, Atom, and Emacs.  For a while, particularly
+earlier last year, I used Emacs for most things I was doing.  I now prefer to
+use Vim, though I'm far from knowledgeable about how to properly use it.  I
+have also been using the Atom editor at work, which is quite handy, but I still
+prefer Vim.  For cross-platform or company-wide usage and code demonstration,
+it has been recommended to set up the code and documentation together in
+Jupyter Notebooks, which, given my experience with the system, I think is a
+very good idea, but I don't yet know how to properly make use of the power of
+the Jupyter Notebook.  However, I have produced a number of reports of
+completed investigations in Jupyter Notebooks.  I have not yet attempted more
+complex or integrated use, and as such have converted some of these to Markdown
+to reduce file sizes.
 
 ### Programming literacy
 
 I am not a computer scientist or software engineer.  I have essentially learned
 a bit of programming on the fly while studying mathematics, statistics, and
 bioinformatics, while working at the CCG, while working at the ANPC, and out of
-interest.  It has definitely opened up more of an interest in the field, which I
-am happy to pursue, but I wouldn't call myself a software engineer by any
+interest.  It has definitely opened up more of an interest in the field, which
+I am happy to pursue, but I wouldn't call myself a software engineer by any
 stretch of the imagination.  As of recently, I will be doing more programming
 work, in which I hope to learn more about the languages in use and associated
-conventions, as well as some general computer science and best practice.
+conventions, as well as some general computer science and best practice.  My
+current focus at work is JavaScript, and it seems quite good, but I am still
+adjusting to the "document-oriented" nature of the language.
