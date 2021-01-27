@@ -38,7 +38,7 @@ end
 
 # Make a matrix of Euclid's algorithm iterations
 function euclid_matrix(m, n)
-  return([length(euclid_silent(i, j)) for i in 1:m, j in 1:n])
+  return([(length(euclid_silent(i, j)) - 2) for i in 1:m, j in 1:n])
 end
 
 # Get the matrix
@@ -63,8 +63,9 @@ is interesting to me are the patterns.  Sort of "fault lines" in the matrix, as
 well as a handful of smaller patterns or clusters.  In particular, there are
 clusters of high and low values making some almost regular shapes, and there
 are lines of high and low values, almost like ridges and valleys.  It appears
-that the minimum number of iterations is 2, and the maximum is 10 (which is
-confirmed in the REPL).
+that the minimum number of iterations is 0, and the maximum is 8 (which is
+confirmed in the REPL).  Note that the minimum length of the object returned is
+2, therefore the number of iterations is the length of the object minus 2.
 
 ### Conclusion
 
