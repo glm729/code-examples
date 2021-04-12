@@ -1,6 +1,6 @@
 # Code Examples
 
-README as at 2021-01-17.
+README as at 2021-04-13.
 
 Any constructive comments on how to improve my skills, knowledge, or best
 practice are most welcome, provided that reasoning is given.  For example,
@@ -28,16 +28,18 @@ possibilities for extension.
 ### Summary
 
 I typically work with R for statistics, Python for testing in my previous
-position, and Ruby for basic data handling and manipulation.  I have otherwise
-played around with R for things like recording timesheets, Python for things
-like implementations of the Syracuse and Euclid algorithms, and have used bash
-for cleaning input (and providing a bit of fancy output) for the youtube-dl
-program (just as a thought exercise, I guess).  I've recently been playing
-around with Ruby a little bit, as well as using it a bit at work, and have
-uploaded some scripts for a couple of things, including Syracuse and Euclid
-implementations.  Recently, I'm learning JavaScript at work for data handling
-and manipulation, and I find its syntax can parallel surprisingly with Ruby,
-which has helped me to pick up basic JS fairly quickly.
+position, and Ruby for basic data handling and manipulation.  Changes to my
+current role have resulted in most of my work being completed in JavaScript and
+Ruby, for user interface development and for data handling and manipulation.  I
+have otherwise played around with R for things like recording timesheets,
+Python for things like implementations of the Syracuse and Euclid algorithms,
+and have used bash for cleaning input (and providing a bit of fancy output) for
+the youtube-dl program (just as a thought exercise, I guess).  I've recently
+been playing around with Ruby a little bit, as well as using it a bit at work,
+and have uploaded some scripts for a couple of things, including Syracuse and
+Euclid implementations.  Recently, I'm learning JavaScript at work for data
+handling and manipulation, and I find its syntax can parallel surprisingly with
+Ruby, which has helped me to pick up basic JS fairly quickly.
 
 In essence, I learned the basics of R when studying statstics, Python when
 studying mathematical modelling and when working at the CCG, and Ruby when
@@ -127,5 +129,4 @@ I am happy to pursue, but I wouldn't call myself a software engineer by any
 stretch of the imagination.  As of recently, I will be doing more programming
 work, in which I hope to learn more about the languages in use and associated
 conventions, as well as some general computer science and best practice.  My
-current focus at work is JavaScript, and it seems quite good, but I am still
-adjusting to the "document-oriented" nature of the language.
+current focus at work is JavaScript and Ruby.
