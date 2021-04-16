@@ -1,6 +1,6 @@
 # Code Examples
 
-README as at 2021-04-13.
+README as at 2021-04-16.
 
 Any constructive comments on how to improve my skills, knowledge, or best
 practice are most welcome, provided that reasoning is given.  For example,
@@ -8,7 +8,23 @@ instead of saying "Do it this way", I recommend providing a bit of reasoning
 and logic to accompany it, e.g. "Do it this way, because it's faster / uses
 less RAM / is the common convention".
 
-## Personal background
+
+## The Short
+
+I am a graduate mathematician / statistician and I enjoy experimenting with
+scripting languages.  Initially learning and using R while studying statistics,
+then Python for study and work, I then tried Ruby and Julia, and at work I have
+been using JavaScript and Ruby quite a lot, and recently Julia.  For Ruby and
+Julia, I think I'm not very good at either, but it's fun to try and I'd like to
+learn more.  I'm certainly open to learning new languages, but I am not
+confident that I could pick up a lower-level language (e.g. C, FORTRAN)
+particularly quickly.
+
+
+## The Long
+
+
+### Personal background
 
 I am a recent graduate of a Bachelor of Science in Mathematics and Statistics,
 at Murdoch University, Perth, Western Australia, during which I completed three
@@ -16,30 +32,33 @@ projects in veterinary biostatistics.  I am currently an Assistant Data Analyst
 at the Australian National Phenome Centre (ANPC), and my previous position was
 Software Tester at the Centre for Comparative Genomics (CCG).
 
-Also, just to mention, I run a Raspberry Pi 4 with Ubuntu MATE.  This is not
-the computer I use at work, but is more than suitable for the vast majority of
+My home computer is a Raspberry Pi 4 with Ubuntu MATE and i3.  This is not the
+computer I use at work, but is more than suitable for the vast majority of
 things I do (even at work, possibly, but don't hold me to that), except maybe
 it's not so great with 720p+ on Youtube.  All in all, I adore the Raspberry Pi
 4, and I only use it as a desktop computer, so I can only imagine the
 possibilities for extension.
 
-## Coding background
 
-### Summary
+### Coding background
+
+#### Summary
 
 I typically work with R for statistics, Python for testing in my previous
-position, and Ruby for basic data handling and manipulation.  Changes to my
-current role have resulted in most of my work being completed in JavaScript and
-Ruby, for user interface development and for data handling and manipulation.  I
-have otherwise played around with R for things like recording timesheets,
-Python for things like implementations of the Syracuse and Euclid algorithms,
-and have used bash for cleaning input (and providing a bit of fancy output) for
-the youtube-dl program (just as a thought exercise, I guess).  I've recently
-been playing around with Ruby a little bit, as well as using it a bit at work,
-and have uploaded some scripts for a couple of things, including Syracuse and
-Euclid implementations.  Recently, I'm learning JavaScript at work for data
-handling and manipulation, and I find its syntax can parallel surprisingly with
-Ruby, which has helped me to pick up basic JS fairly quickly.
+position, and Ruby for data handling and manipulation.  Changes to my current
+role have resulted in most of my work being completed in JavaScript and Ruby,
+for user interface development and for data handling and manipulation, and I've
+been experimenting with Julia.  I have otherwise played around with R for
+things like recording timesheets, Python for things like implementations of the
+Syracuse and Euclid algorithms, and have used bash for cleaning input (and
+providing a bit of fancy output) for the youtube-dl program (just as a thought
+exercise, I guess).  I've recently been playing around with Ruby a little bit,
+as well as using it quite a bit at work, and have uploaded some scripts for a
+couple of things, including Syracuse and Euclid implementations.  Recently, I'm
+learning JavaScript at work for data handling and manipulation, and I find its
+syntax can parallel surprisingly with Ruby, which has helped me to pick up
+basic JS fairly quickly.  I've also recently been trying Julia for a few things
+at work, mainly data handling.
 
 In essence, I learned the basics of R when studying statstics, Python when
 studying mathematical modelling and when working at the CCG, and Ruby when
@@ -50,16 +69,17 @@ certain functions or operations.  I can also provide code assistance and
 documentation, which I enjoy because I miss teaching mathematics and
 statistics.
 
+
 #### R
 
 I started using R in the first half of 2018, when I studied MAS224
 Biostatistical Methods at Murdoch University, co-ordinated by Dr. Nicola J.
-Armstrong.  I have been using R for most semesters since studying this unit,
-including for summer scholarship projects for Murdoch University and for the
-Australian Mathematical Sciences Institute.  Both projects were in veterinary
-biostatistics, as was an undergraduate project in my final semester.  The first
-project was an investigation into factors affecting survival of dogs in
-veterinary trauma cases presenting to emergency and critical care, mainly in
+Armstrong.  I used R for most semesters in my undergrad since studying this
+unit, including for summer scholarship projects for Murdoch University and for
+the Australian Mathematical Sciences Institute.  Both projects were in
+veterinary biostatistics, as was an undergraduate project in my final semester.
+The first project was an investigation into factors affecting survival of dogs
+in veterinary trauma cases presenting to emergency and critical care, mainly in
 the US.  The second project was a supplementary analysis for the application of
 a robust parameter estimation technique in estimating hormone levels in equine
 blood plasma samples to diagnose a common degenerative disorder.  My work on
@@ -71,6 +91,7 @@ Mathematical Sciences Institute in early 2020.  The final project aimed to
 apply text mining techniques to a national veterinary database to monitor
 vaccination scheduling for working dogs in Australia.  I didn't get very far,
 and I would like to improve upon it if I can find the time.
+
 
 #### Python
 
@@ -92,15 +113,18 @@ example.  I also made some minor modifications to a couple of unit tests,
 introducing a small set of sub-tests for a couple of operations, but I didn't
 go too deep there.
 
+
 #### Other languages
 
 I am definitely open to learning more programming languages, though I have not
-tried lower-level languages.  I have tended to stick to high-level languages.
-As such, while I am still curious to learn, it will likely take me quite a bit
-longer to get the hang of lower-level languages, such as C or Fortran.  For
-high-level languages, I have been playing around and working with Ruby.  I am
-now starting to learn HTML, CSS, and JavaScript at work, for designing a
-web-style interface for data handling, analysis, and visualisation.
+tried lower-level languages.  I have tended to stick to high-level languages,
+or scripting languages.  As such, while I am still curious to learn, it will
+likely take me quite a bit longer to get the hang of lower-level languages,
+such as C or FORTRAN.  For high-level languages, I have been playing around and
+working with Ruby and Julia, and I've been doing some HTML, CSS, and JavaScript
+at work, for designing a web-style interface for data handling, analysis, and
+visualisation.
+
 
 ### Editor
 
@@ -109,24 +133,25 @@ Jupyter Notebook when studying Mathematical Modelling.  Otherwise, I have used
 RStudio, Visual Studio Code, Atom, and Emacs.  For a while, particularly
 earlier last year, I used Emacs for most things I was doing.  I now prefer to
 use Vim, though I'm far from knowledgeable about how to properly use it.  I
-have also been using the Atom editor at work, which is quite handy, but I still
-prefer Vim.  For cross-platform or company-wide usage and code demonstration,
-it has been recommended to set up the code and documentation together in
-Jupyter Notebooks, which, given my experience with the system, I think is a
-very good idea, but I don't yet know how to properly make use of the power of
-the Jupyter Notebook.  However, I have produced a number of reports of
-completed investigations in Jupyter Notebooks.  I have not yet attempted more
-complex or integrated use, and as such have converted some of these to Markdown
-to reduce file sizes.
+have also been using the Atom editor at work (until I swapped to i3wm, which
+Atom doesn't like, it seems), but I still prefer Vim.  For cross-platform or
+company-wide usage and code demonstration, it has been recommended to set up
+the code and documentation together in Jupyter Notebooks, which, given my
+experience with the system, I think is a very good idea, but I don't yet know
+how to properly make use of the power of the Jupyter Notebook.  However, I have
+produced a number of reports of completed investigations in Jupyter Notebooks.
+I have not yet attempted more complex or integrated use, and as such have
+converted some of these to Markdown to reduce file sizes.
+
 
 ### Programming literacy
 
 I am not a computer scientist or software engineer.  I have essentially learned
 a bit of programming on the fly while studying mathematics, statistics, and
-bioinformatics, while working at the CCG, while working at the ANPC, and out of
-interest.  It has definitely opened up more of an interest in the field, which
-I am happy to pursue, but I wouldn't call myself a software engineer by any
-stretch of the imagination.  As of recently, I will be doing more programming
-work, in which I hope to learn more about the languages in use and associated
-conventions, as well as some general computer science and best practice.  My
-current focus at work is JavaScript and Ruby.
+basic bioinformatics, while working at the CCG, while working at the ANPC, and
+out of interest.  It has definitely opened up more of an interest in the field,
+which I am happy to pursue, but I wouldn't call myself a software engineer by
+any stretch of the imagination.  As of recently, I have been doing a lot more
+programming work, in which I hope to learn more about the languages in use and
+associated conventions, as well as some general computer science and best
+practice.  My current focus at work is JavaScript, Ruby, and Julia.
