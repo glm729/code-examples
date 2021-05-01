@@ -38,10 +38,11 @@ def is_upgrade():
 
 
 def check_upgradable():
+    rex = re.compile("^([^\/]+)(?=\/)")
     cmd = "apt list --upgradable".split(" ")
     run = sp.run(cmd, capture_output = True).stdout
     res = "".join(chr(c) for c in run).rstrip().split("\n")[1:]
-    fin = map(lambda x : re.match("^([^\/]+)(?=\/)", x).group(1), res)
+    fin = map(lambda x : rex.match(x).group(1), res)
     return list(fin)
 
 
