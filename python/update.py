@@ -33,7 +33,6 @@ def is_upgrade():
     while not upgrade in ["y", "n"]:
         print("\033[7;35mPlease enter only y or n\033[0m")
         upgrade = "y" if is_upgrade() else "n"
-        pass
     return upgrade == "y"
 
 
@@ -56,20 +55,18 @@ cl = check_last(cmd_update()[-1])
 if cl == 0:
     print("\033[7;32mNothing to upgrade\033[0m")
     exit(0)
-    pass
 
 s = '' if cl == 1 else "s"
 
 ugm = "\033[7;33m{cl} package{s} to upgrade, fetching list....\033[0m"
 print(ugm.format(cl = cl, s = s))
 
-u = check_upgradable().join("\n  ")
+u = "\n  ".join(check_upgradable())
 print("\033[7;34mPackages to be upgraded:\033[0m\n  {u}".format(u = u))
 
 if is_upgrade():
     print("\033[7;36mUpgrading packages\033[0m")
     sp.run("sudo apt -y dist-upgrade".split(" "))
-    pass
 
 print("\033[7;32mEnd of operations\033[0m")
 exit(0)
