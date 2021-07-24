@@ -34,9 +34,9 @@ class Updater:
         text = ''.join(chr(c) for c in output).rstrip().split("\n")[1:]
         func = lambda x: self.rex_apt_list.match(x).group(1)
         result_list = list(map(func, text))
-        pretty_list = f'\n{6 * " "}'.join(result_list)
+        pretty_list = f'\n{9 * " "}'.join(result_list)
         self.result_list = result_list
-        self._msg("ok", f'Package{self.s} to upgrade:\n{6 * " "}{pretty_list}')
+        self._msg("ok", f'Package{self.s} to upgrade:\n{9 * " "}{pretty_list}')
         return result_list
 
     def _get_n_from_last(self):
@@ -63,25 +63,27 @@ class Updater:
 
     def apt_upgrade(self):
         if self.is_upgrade():
+            self._msg("ok", f'Upgrading package{self.s}')
             sp.run(self.cmd_apt_upgrade)
 
     def is_upgrade(self):
-        upgrade = input("\033[7;33mUpgrade packages? [y/n]:\033[0m  ").lower()
+        msg = f'\033[7;35m  IP  \033[0m Upgrade package{self.s}? [y/n]: '
+        upgrade = input(msg).lower()
         while not upgrade in ["y", "n"]:
-            print("\033[7;35mPlease enter only y or n\033[0m")
+            self._msg("warn", "Please enter only y or n")
             upgrade = "y" if is_upgrade() else "n"
         return upgrade == "y"
 
     def _msg(self, ty, tx):
         fmt = {
             "exit": "\033[7;31m EXIT \033[0m ",
-            "ok":   "\033[7;32m  OK  \033[0m ",
+            "ok": "\033[7;32m  OK  \033[0m ",
             "warn": "\033[7;33m WARN \033[0m ",
             "info": "\033[7;34m INFO \033[0m ",
+            "input": "\033[7;35m  IP  \033[0m ",
             "data": "\033[7;36m DATA \033[0m "
         }
         print(f'{fmt[ty]}{tx}')
-        pass
 
 
 # Operations
@@ -98,7 +100,7 @@ runner.check_update()
 # If at least one package to upgrade, run the upgrade
 if runner.num_upgrade > 0:
     runner.apt_upgrade()
+    runner._msg("ok", "End of operations")
 
 # All done
-runner._msg("ok", "End of operations")
 exit(0)
