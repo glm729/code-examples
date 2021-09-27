@@ -54,21 +54,20 @@ class Polynomial:
         Attempt to set the value of coefficient `i` to `value`.
         Print an error message if the index is out of range.
 
-        Arguments:
-            i: Index of the coefficient to set
-            value: Value for which to set the coefficient
+        @param { int } i Index of the coefficient to set.
+        @param { float } value Value for which to set the coefficient.
         """
         try:
             self.coefficients[i] = value
         except IndexError:
-            print(f"\033[31mIndex {i} out of range\033[0m")
+            print(f"\033[01;31mIndex {i} out of range\033[00;00m")
 
     def evaluate(self, x):
         """
         Evaluate the polynomial for the given value of x.
 
-        Arguments:
-            x: Value of x for which to evaluate the polynomial
+        @param { float } x Value of x for which to evaluate the polynomial.
+        @return { float } Evaluated polynomial for the given value of x.
         """
         # Initialise the result
         result = 0
@@ -89,9 +88,9 @@ if __name__ == "__main__":
     poly = Polynomial(3)
     # Set the values of the coefficients for the function:
     #     P(x) = 3 + (5 * x) + (2 * (x ** 3))
-    for i in range(0, len(c := [3, 5, 0, 2])):
+    for i in range(0, len(c := (3, 5, 0, 2))):
         poly.set_constant(i, c[i])
     # Evaluate for x = 7  =>  P(7) = 724
     print(f"P(7) = {poly.evaluate(7)}")
-    # Or, more formally / Pythonic:
+    # Or, more formal / Pythonic:
     assert poly.evaluate(7) == 724
