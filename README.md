@@ -110,7 +110,7 @@ computer science and best practice.  My current foci at work are Python and
 TypeScript, but I may soon be learning Java.
 
 
-#### Summary
+### Summary
 
 
 In essence, I learned the basics of R when studying statstics, Python when
