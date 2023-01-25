@@ -2,8 +2,8 @@
 #### 2023-01-21
 
 
-This repository shows a few bits and pieces of code in various languages I've
-written, both for work and out of interest.
+This repository shows a few bits and pieces of code I've written, in various
+languages, both for work and out of interest.
 
 Most of my experience is in R, I used to use Python quite a bit, and recently
 I'm learning a bit of Julia and Rust.  I'm hoping to update some of the old
