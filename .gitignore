@@ -1,2 +1,7 @@
-*~
+# Data, testing, and temp files directories
+/data
+/test
+/tmp
+
+# Python cache dir
 __pycache__/
